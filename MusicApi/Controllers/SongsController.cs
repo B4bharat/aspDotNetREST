@@ -12,6 +12,12 @@ namespace MusicApi.Controllers
     [Route("api/[controller]")]
     public class SongsController : Controller
     {
+        private static List<Song> songs = new List<Song>()
+        {
+            new Song(){ Id = 0, Title = "Willow", Language = "English"},
+            new Song(){ Id = 1, Title = "Yellow", Language = "English"},
+            new Song(){ Id = 2, Title = "Smells Like Teen Spirit", Language = "English"},
+        };
 
         // GET: api/values
         [HttpGet]
@@ -29,28 +35,24 @@ namespace MusicApi.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]Song song)
         {
+            songs.Add(song);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        public void Put(int id, [FromBody]Song song)
         {
+            songs[id] = song;
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+            songs.RemoveAt(id);
         }
-
-        private List<Song> songs = new List<Song>()
-        {
-            new Song(){ Id = 0, Title = "Willow", Language = "English"},
-            new Song(){ Id = 1, Title = "Yellow", Language = "English"},
-            new Song(){ Id = 2, Title = "Smells Like Teen Spirit", Language = "English"},
-        };
     }
 }
 
