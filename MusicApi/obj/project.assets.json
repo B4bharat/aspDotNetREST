@@ -3970,11 +3970,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/bharat_explorer/Projects/MusicApi/MusicApi/MusicApi.csproj",
+      "projectUniqueName": "/Users/bharat_explorer/Projects/asp.net/aspDotNetREST/MusicApi/MusicApi.csproj",
       "projectName": "MusicApi",
-      "projectPath": "/Users/bharat_explorer/Projects/MusicApi/MusicApi/MusicApi.csproj",
+      "projectPath": "/Users/bharat_explorer/Projects/asp.net/aspDotNetREST/MusicApi/MusicApi.csproj",
       "packagesPath": "/Users/bharat_explorer/.nuget/packages/",
-      "outputPath": "/Users/bharat_explorer/Projects/MusicApi/MusicApi/obj/",
+      "outputPath": "/Users/bharat_explorer/Projects/asp.net/aspDotNetREST/MusicApi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/bharat_explorer/.nuget/NuGet/NuGet.Config"

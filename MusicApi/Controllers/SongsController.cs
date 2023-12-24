@@ -22,45 +22,51 @@ namespace MusicApi.Controllers
 
         // GET: api/values
         [HttpGet]
-        public IEnumerable<Song> Get()
+        public IActionResult Get()
         {
-            return _dbContext.Songs;
+            return Ok(_dbContext.Songs);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public Song Get(int id)
+        public IActionResult Get(int id)
         {
             var song = _dbContext.Songs.Find(id);
-            return song;
+            return Ok(song);
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]Song song)
+        public IActionResult Post([FromBody]Song song)
         {
             _dbContext.Songs.Add(song);
             _dbContext.SaveChanges();
+
+            return StatusCode(StatusCodes.Status201Created);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]Song songObj)
+        public IActionResult Put(int id, [FromBody]Song songObj)
         {
             var song = _dbContext.Songs.Find(id);
             song.Title = songObj.Title;
             song.Language = songObj.Language;
 
             _dbContext.SaveChanges();
+
+            return Ok("Record updated successfully");
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public IActionResult Delete(int id)
         {
             var song = _dbContext.Songs.Find(id);
             _dbContext.Songs.Remove(song);
             _dbContext.SaveChanges();
+
+            return Ok("Record Deleted");
         }
     }
 }
